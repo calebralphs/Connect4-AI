@@ -1,15 +1,16 @@
-Connect 4 Minimax/Alpha Beta Pruning Implementation
-David Larson & Caleb Ralphs
+## Connect 4 Minimax/Alpha Beta Pruning Implementation
+## David Larson & Caleb Ralphs
 
-How to run:
+### How to run:
+
 Our program uses a few extra classes in addition to those provided by Prof. Heffernan. Firstly, the class that we
 created which extends Player is called "Caleb" in the Players package. This class houses our getMove() function and the implementation
 of minimax, alpha beta pruning, and our heuristic function. This is what SimplePlayer should be interchanged with
-in the RefereeBoard class. Next, we have a class called BoardCJR in the utilities package which extends StateTree. This is the class that
-we used to implement minimax. We found a need to instantiate objects of type StateTree, so we created the BoardCJR
+in the RefereeBoard class. Next, we have a class called BoardCJR in the utilities package which extends StateTree. This is the class that we used to implement minimax. We found a need to instantiate objects of type StateTree, so we created the BoardCJR
 class which allowed us to do so. Our program will need access to both of these classes in order to function properly.
 
-Heuristic
+### Heuristic:
+
 In our program we created a heuristic which evaluated the state of the board in an accelerated manner. We decided 
 that checking each piece in the entire board would be a waste of time. To avoid this, we decided to only check each
 piece that was exposed to an empty space. For each of these pieces, we looked at the adjacent pieces vertically,
@@ -35,11 +36,16 @@ to the game board. The values within the matrix were associated with the number 
 that position on the board. Naturally, the positions closer to the middle of the board would be higher than those on
 the edge. For a classic 6x7 board, this matrix would look like this:
 
-3 4  5  7  5 4 3 
+3 4  5  7  5 4 3
+
 4 6  8 10  8 6 4
-5 8 11 13 11 8 5 
+
 5 8 11 13 11 8 5
+
+5 8 11 13 11 8 5
+
 4 6  8 10  8 6 4
+
 3 4  5  7  5 4 3
 
 Given this matrix, evaluating the board becomes as simple as iterating through the gameBoard and checking whether
